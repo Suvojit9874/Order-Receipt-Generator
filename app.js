@@ -65,25 +65,26 @@ app.post("/generate-receipt", (req, res) => {
 
   // Order, Billing, and Shipping Information
   doc.moveDown(1);
-  doc.fontSize(10).text(`Order ID: ${orderId}`, 50, 160);
+  doc.fontSize(10).text(`Payment ID: ${orderId}`, 50, 160);
   doc.text(`Order Date: ${orderDate}`, 50, 175);
   doc.text(`Invoice Date: ${new Date().toLocaleDateString()}`, 50, 190);
 
   doc.text(`Bill To:`, 300, 160);
   doc.text(`${name}`, 300, 175);
-  doc.text(`${address}`, 300, 190);
-  doc.text(`PinCode: ${postcode} | State: ${state} | City: ${city}`, 300, 205);
-  doc.text(`Phone: ${number}`, 300, 220);
+  doc.text(`${email}`, 300, 190);
+  doc.text(`${address}`, 300, 205);
+  doc.text(`PinCode: ${postcode} | State: ${state} | City: ${city}`, 300, 220);
+  doc.text(`Phone: ${number}`, 300, 235);
 
-  doc.text(`Ship To:`, 300, 240);
-  doc.text(`${name}`, 300, 255);
-  doc.text(`${address}`, 300, 270);
-  doc.text(`PinCode: ${postcode} | State: ${state} | City: ${city}`, 300, 290);
-  doc.text(`Phone: ${number}`, 300, 300);
+  doc.text(`Ship To:`, 300, 255);
+  doc.text(`${name}`, 300, 270);
+  doc.text(`${address}`, 300, 285);
+  doc.text(`PinCode: ${postcode} | State: ${state} | City: ${city}`, 300, 300);
+  doc.text(`Phone: ${number}`, 300, 315);
 
   // Table header
   doc.moveDown(1);
-  doc.fontSize(10).text(`Total items: ${items.length}`, 50, 320);
+  doc.fontSize(10).text(`Total items: ${items.length}`, 50, 330);
   doc.moveDown(0.5);
   doc.text(`Product`, 50, 340);
   doc.text(`Qty`, 320, 340);
@@ -148,4 +149,4 @@ app.post("/generate-receipt", (req, res) => {
   }, 1000);
 });
 
-app.listen(8000, () => console.log("Server running on http://localhost:3000"));
+app.listen(8000, () => console.log("Server running on http://localhost:8000"));
