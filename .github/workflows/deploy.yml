@@ -23,6 +23,8 @@ jobs:
       - name: Deploy Application
         run: |
           ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa root@188.245.155.234 << 'EOF'
+          eval `ssh-agent -s`
+          ssh-add ~/.ssh/id_rsa
           cd Order-Receipt-Generator  # Change this to your actual app path
           git pull origin main
           npm install --production
