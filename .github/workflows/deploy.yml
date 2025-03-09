@@ -26,5 +26,5 @@ jobs:
           cd Order-Receipt-Generator  # Change this to your actual app path
           git pull origin main
           npm install --production
-          pm2 restart Order-reciept-enerator
+          pm2 restart Order-reciept-Generator
           EOF
