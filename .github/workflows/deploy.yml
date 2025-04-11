@@ -29,4 +29,5 @@ jobs:
           git pull origin main
           npm install --production
           pm2 restart Order-reciept-Generator
+          pm2 save
           EOF
